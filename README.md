@@ -1,6 +1,6 @@
 # vim-codegame
 
-Very basic vim language support for the [crab](https://github.com/Bananenpro/crab) programming language.
+A vim plugin for writing CodeGame applications.
 
 ## Features
 
