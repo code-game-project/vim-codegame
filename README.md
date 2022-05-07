@@ -1,7 +1,7 @@
 # vim-codegame
 ![CGE Version](https://img.shields.io/badge/CGE-v0.0.1-green)
 
-A vim plugin for writing CodeGame applications.
+A vim plugin for writing [CodeGame](https://github.com/code-game-project) applications.
 
 ## Features
 
