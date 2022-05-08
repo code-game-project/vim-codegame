@@ -22,12 +22,19 @@ syntax keyword cgeType
 	\ map
 	\ list
 
-syntax match cgeCustomType "\v(\l|_)+(\l|\d)+" contained skipwhite skipnl
-syntax match cgeProperty "\v(\l|_)+(\l|\d):" nextgroup=cgeCustomType skipwhite skipnl
-syntax match cgeEventName "\v(\l|_)+(\l|\d)+" contained skipwhite skipnl
+syntax match cgeCustomType "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
+syntax match cgeProperty "\v(\l|_)+(\l|\d)*:" nextgroup=cgeCustomType skipwhite skipnl
+syntax match cgeEventName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
 syntax match cgeEventDeclaration "\v<(event)>" nextgroup=cgeEventName skipwhite skipnl
-syntax match cgeCustomTypeName "\v(\l|_)+(\l|\d)+" contained skipwhite skipnl
+syntax match cgeCustomTypeName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
 syntax match cgeTypeDeclaration "\v<(type)>" nextgroup=cgeCustomTypeName skipwhite skipnl
+
+
+syntax match cgeName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
+syntax match cgeNameDecl "\v<(name)>" nextgroup=cgeName skipwhite skipnl
+
+syntax match cgeVersion "\v\d+(\.\d+(\.\d+)?)?" contained skipwhite skipnl
+syntax match cgeVersionDecl "\v<(version)>" nextgroup=cgeVersion skipwhite skipnl
 
 syntax region cgeBody start="{" end="}" fold transparent
 
@@ -40,5 +47,9 @@ highlight default link cgeCustomType Type
 highlight default link cgeCustomTypeName Type
 highlight default link cgeEventDeclaration Keyword
 highlight default link cgeTypeDeclaration Keyword
+highlight default link cgeNameDecl Keyword
+highlight default link cgeName Constant
+highlight default link cgeVersionDecl Keyword
+highlight default link cgeVersion Constant
 
 let b:current_syntax = "cge"

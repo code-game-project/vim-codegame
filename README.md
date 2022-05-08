@@ -1,11 +1,11 @@
 # vim-codegame
-![CGE Version](https://img.shields.io/badge/CGE-v0.0.1-green)
+![CGE Version](https://img.shields.io/badge/CGE-v0.1-green)
 
 A vim plugin for writing [CodeGame](https://github.com/code-game-project) applications.
 
 ## Features
 
-- Syntax highlighting and indenting for `.cbe` files
+- Syntax highlighting and indenting for `.cge` files
 
 ## Installation
 
