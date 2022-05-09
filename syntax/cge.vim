@@ -24,6 +24,7 @@ syntax keyword cgeType
 
 syntax match cgeCustomType "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
 syntax match cgeProperty "\v(\l|_)+(\l|\d)*:" nextgroup=cgeCustomType skipwhite skipnl
+syntax match cgeGeneric "\v\<" nextgroup=cgeCustomType skipwhite skipnl
 syntax match cgeEventName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
 syntax match cgeEventDeclaration "\v<(event)>" nextgroup=cgeEventName skipwhite skipnl
 syntax match cgeCustomTypeName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
