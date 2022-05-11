@@ -1,5 +1,5 @@
 # vim-codegame
-![CGE Version](https://img.shields.io/badge/CGE-v0.1-green)
+![CGE Version](https://img.shields.io/badge/CGE-v0.2-green)
 
 A vim plugin for writing [CodeGame](https://github.com/code-game-project) applications.
 

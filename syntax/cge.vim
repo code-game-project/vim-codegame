@@ -22,16 +22,18 @@ syntax keyword cgeType
 	\ map
 	\ list
 
-syntax match cgeCustomType "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
-syntax match cgeProperty "\v(\l|_)+(\l|\d)*:" nextgroup=cgeCustomType skipwhite skipnl
+
+syntax match cgeCustomType "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
+syntax match cgeEnumValue "\v(\l|_)(\l|\d|_)*" skipwhite skipnl
+syntax match cgeProperty "\v(\l|_)(\l|\d|_)*:" nextgroup=cgeCustomType,cgeTypeDeclaration skipwhite skipnl
 syntax match cgeGeneric "\v\<" nextgroup=cgeCustomType skipwhite skipnl
-syntax match cgeEventName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
+syntax match cgeEventName "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
 syntax match cgeEventDeclaration "\v<(event)>" nextgroup=cgeEventName skipwhite skipnl
-syntax match cgeCustomTypeName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
-syntax match cgeTypeDeclaration "\v<(type)>" nextgroup=cgeCustomTypeName skipwhite skipnl
+syntax match cgeCustomTypeName "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
+syntax match cgeTypeDeclaration "\v<(type|enum)>" nextgroup=cgeCustomTypeName skipwhite skipnl
 
 
-syntax match cgeName "\v(\l|_)+(\l|\d)*" contained skipwhite skipnl
+syntax match cgeName "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
 syntax match cgeNameDecl "\v<(name)>" nextgroup=cgeName skipwhite skipnl
 
 syntax match cgeVersion "\v\d+(\.\d+(\.\d+)?)?" contained skipwhite skipnl
