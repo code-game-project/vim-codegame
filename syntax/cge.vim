@@ -26,7 +26,7 @@ syntax keyword cgeType
 syntax match cgeCustomType "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
 syntax match cgeEnumValue "\v(\l|_)(\l|\d|_)*" skipwhite skipnl
 syntax match cgeProperty "\v(\l|_)(\l|\d|_)*:" nextgroup=cgeCustomType,cgeTypeDeclaration skipwhite skipnl
-syntax match cgeGeneric "\v\<" nextgroup=cgeCustomType skipwhite skipnl
+syntax match cgeGeneric "\v\<" nextgroup=cgeCustomType,cgeTypeDeclaration skipwhite skipnl
 syntax match cgeEventName "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
 syntax match cgeEventDeclaration "\v<(event)>" nextgroup=cgeEventName skipwhite skipnl
 syntax match cgeCustomTypeName "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
