@@ -15,7 +15,6 @@ syntax keyword cgeType
 	\ int
 	\ int32
 	\ int64
-	\ bigint
 	\ float32
 	\ float
 	\ float64
