@@ -1,5 +1,5 @@
 # vim-codegame
-![CGE Version](https://img.shields.io/badge/CGE-v0.4-green)
+![CGE Version](https://img.shields.io/badge/CGE-v0.5-green)
 
 A vim plugin for writing [CodeGame](https://github.com/code-game-project) applications.
 
@@ -19,7 +19,7 @@ Plug 'code-game-project/vim-codegame'
 
 MIT License
 
-Copyright (c) 2022 Julian Hofmann
+Copyright (c) 2022-2023 Julian Hofmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

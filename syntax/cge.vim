@@ -37,7 +37,7 @@ syntax match cgeName "\v(\l|_)(\l|\d|_)*" contained skipwhite skipnl
 syntax match cgeNameDecl "\v<(name)>" nextgroup=cgeName skipwhite skipnl
 
 syntax match cgeVersion "\v\d+\.\d+" contained skipwhite skipnl
-syntax match cgeVersionDecl "\v<(version)>" nextgroup=cgeVersion skipwhite skipnl
+syntax match cgeVersionDecl "\v<(version|cge)>" nextgroup=cgeVersion skipwhite skipnl
 
 syntax region cgeBody start="{" end="}" fold transparent
 
