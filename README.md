@@ -15,6 +15,48 @@ A vim plugin for writing [CodeGame](https://github.com/code-game-project) applic
 Plug 'code-game-project/vim-codegame'
 ```
 
+## Activate LSP
+
+The [CodeGame CLI](https://github.com/code-game-project/codegame-cli) includes a built-in CGE language server: `codegame lsp cge`
+
+### coc.nvim
+
+To register the language server using [coc.nvim](https://github.com/neoclide/coc.nvim) paste the following snippet into [`coc-settings.json`](https://github.com/neoclide/coc.nvim/wiki/Language-servers#register-custom-language-servers):
+```json
+{
+  "languageserver": {
+    "cge-ls": {
+      "command": "codegame lsp cge",
+      "filetypes": ["cge"],
+      "rootPatterns": [".git/", "."]
+    }
+  }
+}
+```
+
+### lspconfig setup
+
+To register the language server using [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) paste the following
+snippet into your `init.lua` (you may need to tweak it a bit to make it fit with the rest of your config, e.g. pass some options to `lspconfig.cge.setup{}`):
+
+```lua
+local lspconfig = require('lspconfig')
+local configs = require('lspconfig.configs')
+configs.cge = {
+	default_config = {
+		cmd = { "codegame", "lsp", "cge" },
+		root_dir = lspconfig.util.root_pattern('.git'),
+		single_file_support = true,
+		filetypes = { 'cge' },
+		init_options = {
+			command = {'codegame', 'lsp', 'cge'},
+		},
+	},
+}
+lspconfig.cge.setup{}
+```
+
+
 ## License
 
 MIT License
